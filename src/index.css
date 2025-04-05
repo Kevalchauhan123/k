@@ -1,0 +1,19 @@
+body{
+  background-color: black !important;
+}
+
+.card {
+  transition: transform 0.2s ease-in-out;
+  --bs-card-bg: rgb(36, 36, 36) !important;
+  color: azure !important;
+  text-decoration: none !important;
+  border-color: rgb(97, 97, 97) !important;
+  border-radius: 0 !important;
+}
+
+.card-body{
+  text-decoration: none !important;
+}
+.card:hover {
+  cursor: pointer;
+}
