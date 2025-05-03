@@ -1,19 +1,240 @@
-body{
-  background-color: black !important;
+/* App.css */
+:root {
+  --black: #000;
+  --red: #d10000;
+  --white: #fff;
+  --gray: #f5f5f5;
+  --light-gray: #eaeaea;
 }
 
-.card {
-  transition: transform 0.2s ease-in-out;
-  --bs-card-bg: rgb(36, 36, 36) !important;
-  color: azure !important;
-  text-decoration: none !important;
-  border-color: rgb(97, 97, 97) !important;
-  border-radius: 0 !important;
+body {
+  margin: 0;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  color: var(--black);
+  background-color: var(--white);
 }
 
-.card-body{
-  text-decoration: none !important;
+a {
+  text-decoration: none;
+  color: inherit;
 }
-.card:hover {
+
+.av-app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Navbar */
+.av-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  border-bottom: 1px solid var(--black);
+  background: var(--white);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.av-logo {
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.av-nav-links a {
+  margin-left: 30px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.av-nav-links a:hover {
+  color: var(--red);
+}
+
+/* Hero Section */
+.av-hero {
+  width: 100%;
+  height: 80vh;
+  background: var(--gray);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 60px;
+}
+
+.av-hero-content {
+  text-align: center;
+}
+
+.av-hero-content h1 {
+  font-size: 48px;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.av-hero-content p {
+  font-size: 18px;
+  color: #333;
+}
+
+/* Product Section */
+.av-products {
+  padding: 0 40px 60px;
+}
+
+.av-section-title {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 500;
+  margin-bottom: 50px;
+}
+
+.av-product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  /* gap: 40px;
+  max-width: 1200px; */
+  margin: 0 auto;
+}
+
+.av-product-card {
+  background: var(--white);
+  border: 1px solid black;
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.av-hero-image {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 24px;
+  border-radius: 8px;
+}
+
+.av-product-image {
+  width: 100%;
+  height: 400px;
+  background-color: var(--gray);
+  margin-bottom: 20px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.av-product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.av-product-info h3 {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.av-price {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.av-description {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.av-add-to-cart {
+  background-color: var(--black);
+  color: var(--white);
+  border: none;
+  padding: 12px 24px;
+  font-size: 14px;
   cursor: pointer;
+  letter-spacing: 1px;
+  transition: background-color 0.3s ease;
+  width: 100%;
+}
+
+.av-add-to-cart:hover {
+  background-color: var(--red);
+}
+
+/* Footer */
+.av-footer {
+  padding: 40px;
+  border-top: 1px solid var(--black);
+  background-color: var(--white);
+}
+
+.av-footer-content {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto 20px;
+  flex-wrap: wrap;
+}
+
+.av-footer-logo {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.av-footer-links {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.av-footer-links a {
+  font-size: 14px;
+  color: var(--black);
+}
+
+.av-footer-links a:hover {
+  color: var(--red);
+}
+
+.av-copyright {
+  text-align: center;
+  font-size: 12px;
+  color: #999;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .av-product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .av-product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .av-nav {
+    padding: 20px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .av-nav-links {
+    margin-top: 10px;
+  }
+
+  .av-footer-content {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .av-footer-links {
+    gap: 10px;
+  }
 }
