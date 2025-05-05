@@ -28,7 +28,7 @@ a {
 /* Navbar */
 .av-nav {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   padding: 20px 40px;
   border-bottom: 1px solid var(--black);
@@ -58,33 +58,36 @@ a {
 /* Hero Section */
 .av-hero {
   width: 100%;
-  height: 80vh;
-  background: var(--gray);
-  display: flex;
-  align-items: center;
-  justify-content: center;
   margin-bottom: 60px;
+  object-fit: cover;
 }
 
 .av-hero-content {
+  position: relative;
   text-align: center;
+  
 }
 
-.av-hero-content h1 {
-  font-size: 48px;
-  font-weight: bold;
-  margin-bottom: 16px;
+.av-hero-content img{
+  object-fit: cover;
+  width: 100%;
+  height: calc(100vh - 150px);
 }
 
-.av-hero-content p {
-  font-size: 18px;
-  color: #333;
+.hero-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
 }
 
-/* Product Section */
-.av-products {
-  padding: 0 40px 60px;
+.hero-logo {
+  max-width: 150px;
+  margin-bottom: 20px;
 }
+
 
 .av-section-title {
   text-align: center;
@@ -95,7 +98,7 @@ a {
 
 .av-product-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   /* gap: 40px;
   max-width: 1200px; */
   margin: 0 auto;
@@ -103,7 +106,6 @@ a {
 
 .av-product-card {
   background: var(--white);
-  border: 1px solid black;
   padding: 20px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -111,6 +113,7 @@ a {
 .av-hero-image {
   max-width: 100%;
   height: auto;
+  position: relative;
   margin-bottom: 24px;
   border-radius: 8px;
 }
@@ -131,6 +134,7 @@ a {
   height: 100%;
   object-fit: cover;
   display: block;
+  border-radius: 5px;
 }
 
 .av-product-info h3 {
@@ -175,7 +179,7 @@ a {
 
 .av-footer-content {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   max-width: 1200px;
   margin: 0 auto 20px;
   flex-wrap: wrap;
