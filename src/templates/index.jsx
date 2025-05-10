@@ -1,9 +1,21 @@
 import React from 'react';
 // import './App.css';
-import logo from '../assets/ashlogo.jpeg';
-import hero from '../assets/hero.jpeg';
+import logo from '../assets/logoname.jpeg';
+import hero from '../assets/banner.jpg';
+import img1 from '../assets/1.jpeg';
+import img2 from '../assets/2.jpeg';
+import img3 from '../assets/3.jpeg';
+import img4 from '../assets/4.jpeg';
+import img5 from '../assets/5.jpeg';
+import img6 from '../assets/6.jpeg';
+import img7 from '../assets/7.jpeg';
+import img8 from '../assets/8.jpeg';
+import img9 from '../assets/9.jpeg';
 
-const App = () => {
+import logoimg from '../assets/logo.jpeg';
+import { Link } from 'react-router-dom';
+
+const Index = () => {
 
   const products = [
     {
@@ -11,84 +23,84 @@ const App = () => {
       name: "Classic Linen Shirt",
       price: 1600.00,
       description: "100% European flax linen",
-      image: "https://images.pexels.com/photos/5270533/pexels-photo-5270533.jpeg?auto=compress&cs=tinysrgb&w=1200"
+      image: img1
     },
     {
       id: 2,
       name: "Black Linen Shirt",
       price: 1600.00,
       description: "Stonewashed for softness",
-      image: "https://images.pexels.com/photos/22441297/pexels-photo-22441297/free-photo-of-shirt-on-hanger-on-branch.jpeg?auto=compress&cs=tinysrgb&w=1200"
+      image: img2
     },
     {
       id: 3,
       name: "Overshirt",
       price: 1600.00,
       description: "Heavyweight linen blend",
-      image: "https://images.pexels.com/photos/5156489/pexels-photo-5156489.jpeg?auto=compress&cs=tinysrgb&w=1200"
+      image: img3
     },
     {
       id: 4,
       name: "White Linen Shirt",
       price: 1600.00,
       description: "Crisp unfinished collar",
-      image: "https://images.pexels.com/photos/31854718/pexels-photo-31854718/free-photo-of-folded-yellow-and-brown-linen-shirts-with-tags.jpeg?auto=compress&cs=tinysrgb&w=1200"
+      image: img4
     },
     {
       id: 5,
       name: "Travel Shirt",
       price: 1600.00,
       description: "Reinforced stress points",
-      image: "https://images.pexels.com/photos/22441291/pexels-photo-22441291/free-photo-of-shirt-on-hanger-on-branch.jpeg?auto=compress&cs=tinysrgb&w=1200"
+      image: img5
     },
     {
       id: 6,
       name: "Red Stitch Special",
       price: 1600.00,
       description: "Signature edition",
-      image: "https://images.pexels.com/photos/17805751/pexels-photo-17805751/free-photo-of-man-sitting-backwards-with-straw-sunhat.jpeg?auto=compress&cs=tinysrgb&w=1200"
+      image: img6
     },
     {
       id: 7,
       name: "Classic Linen Shirt",
       price: 1600.00,
       description: "100% European flax linen",
-      image: "https://images.pexels.com/photos/5270533/pexels-photo-5270533.jpeg?auto=compress&cs=tinysrgb&w=1200"
+      image: img7
     },
     {
       id: 8,
       name: "Black Linen Shirt",
       price: 1600.00,
       description: "Stonewashed for softness",
-      image: "https://images.pexels.com/photos/22441297/pexels-photo-22441297/free-photo-of-shirt-on-hanger-on-branch.jpeg?auto=compress&cs=tinysrgb&w=1200"
+      image: img8
     },
     {
       id: 9,
       name: "Overshirt",
       price: 1600.00,
       description: "Heavyweight linen blend",
-      image: "https://images.pexels.com/photos/5156489/pexels-photo-5156489.jpeg?auto=compress&cs=tinysrgb&w=1200"
+      image: img9
     },
     {
       id: 10,
       name: "White Linen Shirt",
       price: 1600.00,
       description: "Crisp unfinished collar",
-      image: "https://images.pexels.com/photos/31854718/pexels-photo-31854718/free-photo-of-folded-yellow-and-brown-linen-shirts-with-tags.jpeg?auto=compress&cs=tinysrgb&w=1200"
+      image: img1
     },
     {
       id: 11,
       name: "Travel Shirt",
       price: 1600.00,
       description: "Reinforced stress points",
-      image: "https://images.pexels.com/photos/22441291/pexels-photo-22441291/free-photo-of-shirt-on-hanger-on-branch.jpeg?auto=compress&cs=tinysrgb&w=1200"
+      image: img2
     },
     {
       id: 12,
       name: "Red Stitch Special",
       price: 1600.00,
       description: "Signature edition",
-      image: "https://images.pexels.com/photos/17805751/pexels-photo-17805751/free-photo-of-man-sitting-backwards-with-straw-sunhat.jpeg?auto=compress&cs=tinysrgb&w=1200"
+      image: img3
     }
   ];
 
@@ -96,7 +108,7 @@ const App = () => {
     <div className="av-app">
       {/* Navbar */}
       <nav className="av-nav">
-        <div className="av-logo text-center"><img src={logo} alt="ashvuples" height="100" width="100" /></div>
+        <div className="av-logo text-center"><img src={logo} alt="ashvuples" height="30" width="170" /></div>
 
       </nav>
 
@@ -113,19 +125,25 @@ const App = () => {
 
       {/* Products */}
       <div className="av-products">
-        <h2 className="av-section-title">Our Collection</h2>
+        <h2 className="av-section-title">NEW IN</h2>
         <div className="av-product-grid">
           {products.map(product => (
-            <div key={product.id} className="av-product-card">
-              <div
-                className="av-product-image">
-                <img src={product.image} alt={product.name} />
+            <Link
+              key={product.id}
+              to={`/product/${product.id}`}
+              className="av-product-card-link"
+              style={{ textDecoration: 'none', color: 'inherit' }}
+            >
+              <div className="av-product-card">
+                <div className="av-product-image">
+                  <img src={product.image} alt={product.name} />
+                  <div className="av-hover-details">
+                  <div>{product.name}</div>
+                </div>
+                </div>
+                
               </div>
-              <div className="av-product-info">
-                <h3>{product.name}</h3>
-                <p className="av-price">₹{product.price}</p>
-              </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
@@ -133,8 +151,8 @@ const App = () => {
       {/* Footer */}
       <footer className="av-footer">
         <div className="av-footer-content">
-        <div className="av-logo text-center"><img src={logo} alt="ashvuples" height="100" width="100" /></div>
-          
+          <div className="av-logo text-center"><img src={logoimg} alt="ashvuples" height="80" width="150" /></div>
+
         </div>
         <div className="av-copyright">
           © 2025 ASHVULPES. All rights reserved.
@@ -144,4 +162,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default Index;
