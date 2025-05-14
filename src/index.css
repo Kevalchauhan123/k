@@ -29,7 +29,7 @@ a {
 .av-nav {
   height: 45px;
   display: flex;
-  justify-content: start;
+  justify-content: center;
   align-items: center;
   border-bottom: 1px solid var(--black);
   background: var(--white);
