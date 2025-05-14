@@ -73,7 +73,6 @@ a {
 .av-hero-content img{
   object-fit: cover;
   width: 100%;
-  height: calc(100vh - 45px);
 }
 
 .hero-overlay {
